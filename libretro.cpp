@@ -2202,6 +2202,7 @@ static void update_input(void)
 
    static int turbo_map[MAX_BUTTONS]     = { -1,-1,-1,-1,-1,-1,-1,-1, 1, 0,-1,-1,-1,-1,-1 };
    static int turbo_map_alt[MAX_BUTTONS] = { -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1, 1, 0 };
+   int *turbo_map_selected    = (!turbo_toggle_alt ? turbo_map : turbo_map_alt);
    static unsigned map[MAX_BUTTONS] = {
       RETRO_DEVICE_ID_JOYPAD_A, // I
       RETRO_DEVICE_ID_JOYPAD_B, // II
