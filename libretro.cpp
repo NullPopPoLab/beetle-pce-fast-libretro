@@ -68,6 +68,55 @@ extern "C" {
 MDFNGI *MDFNGameInfo = &EmulatedPCE_Fast;
 }
 
+static uint8 lastchar = 0;
+
+struct retro_perf_callback perf_cb;
+retro_get_cpu_features_t perf_get_cpu_features_cb = NULL;
+retro_log_printf_t log_cb;
+static retro_video_refresh_t video_cb;
+static retro_audio_sample_t audio_cb;
+static retro_audio_sample_batch_t audio_batch_cb;
+static retro_environment_t environ_cb;
+static retro_input_poll_t input_poll_cb;
+static retro_input_state_t input_state_cb;
+static double last_sound_rate = 0.0;
+
+static bool libretro_supports_option_categories = false;
+static bool libretro_supports_bitmasks = false;
+
+static MDFN_Surface *surf = NULL;
+
+static bool failed_init = false;
+
+static unsigned video_width = 0;
+static unsigned video_height = 0;
+
+static uint64_t video_frames = 0;
+static uint64_t audio_frames = 0;
+
+#include "mednafen/pce_fast/pcecd.h"
+
+/* Frameskipping Support */
+
+static unsigned frameskip_type             = 0;
+static unsigned frameskip_threshold        = 0;
+static uint16_t frameskip_counter          = 0;
+
+static bool retro_audio_buff_active        = false;
+static unsigned retro_audio_buff_occupancy = 0;
+static bool retro_audio_buff_underrun      = false;
+/* Maximum number of consecutive frames that
+ * can be skipped */
+#define FRAMESKIP_MAX 30
+
+static unsigned audio_latency              = 0;
+static bool update_audio_latency           = false;
+
+static bool disk_ejected=false;
+static unsigned disk_index = 0;
+static std::vector<std::string> disk_label;
+struct retro_disk_control_ext_callback dskcb;
+
 /* Composite palette 2020/09/14
  * authors: Dshadoff, Turboxray, Furrtek, Kitrinx and others
  */
@@ -1203,6 +1252,8 @@ static int LoadCD(std::vector<CDIF *> *CDInterfaces)
 
  LoadCommonPre();
 
+ disk_index=0;
+
  if(!HuCLoadCD(bios_path.c_str()))
   return(0);
 
@@ -1461,8 +1512,10 @@ static void ReadM3U(std::vector<std::string> &file_list, std::string path, unsig
 
          ReadM3U(file_list, efp, depth++);
       }
-      else
+      else{
+		disk_label.push_back(std::string(linebuf));
          file_list.push_back(efp);
+      }
    }
 
 end:
@@ -1471,6 +1524,63 @@ end:
 
  static std::vector<CDIF *> CDInterfaces;	// FIXME: Cleanup on error out.
 // TODO: LoadCommon()
+
+bool set_eject_state(bool ejected)
+{
+	bool r=false;
+	if(ejected)r=PCECD_Drive_SetDisc(true, NULL, true);
+	else r=PCECD_Drive_SetDisc(false, (*CDInterfaces)[disk_index], true);
+	if(r)disk_ejected=ejected;
+	return r;
+}
+
+bool get_eject_state(void)
+{
+   return disk_ejected;
+}
+
+unsigned get_image_index(void)
+{
+   return disk_index;
+}
+
+bool set_image_index(unsigned index)
+{
+	if (index >= CDInterfaces.size()) return false;
+	disk_index = index;
+	return true;
+}
+
+unsigned get_num_images(void)
+{
+   return CDInterfaces.size();
+}
+
+static bool disk_get_image_label(unsigned index, char *label, size_t len)
+{
+   if (len < 1) return false;
+   if (index >= CDInterfaces.size()) return false;
+
+	strncpy(label, disk_label[index].c_str(), len);
+	return true;
+}
+
+static void attach_disk_swap_interface(void)
+{
+   /* these functions are unused */
+   dskcb.set_eject_state = set_eject_state;
+   dskcb.get_eject_state = get_eject_state;
+   dskcb.set_image_index = set_image_index;
+   dskcb.get_image_index = get_image_index;
+   dskcb.get_num_images  = get_num_images;
+   dskcb.add_image_index = NULL;
+   dskcb.replace_image_index = NULL;
+   dskcb.set_initial_image = NULL;
+   dskcb.get_image_path = NULL;
+   dskcb.get_image_label = disk_get_image_label;
+
+   environ_cb(RETRO_ENVIRONMENT_SET_DISK_CONTROL_EXT_INTERFACE, &dskcb);
+}
 
 static bool MDFNI_LoadCD(const char *path, const char *ext)
 {
@@ -1523,6 +1633,7 @@ static bool MDFNI_LoadCD(const char *path, const char *ext)
       MDFNGameInfo = NULL;
       return false;
    }
+	else attach_disk_swap_interface();
 
    //MDFNI_SetLayerEnableMask(~0ULL);
 
@@ -1589,50 +1700,6 @@ error:
    MDFNGameInfo = NULL;
    return false;
 }
-
-static uint8 lastchar = 0;
-
-struct retro_perf_callback perf_cb;
-retro_get_cpu_features_t perf_get_cpu_features_cb = NULL;
-retro_log_printf_t log_cb;
-static retro_video_refresh_t video_cb;
-static retro_audio_sample_t audio_cb;
-static retro_audio_sample_batch_t audio_batch_cb;
-static retro_environment_t environ_cb;
-static retro_input_poll_t input_poll_cb;
-static retro_input_state_t input_state_cb;
-static double last_sound_rate = 0.0;
-
-static bool libretro_supports_option_categories = false;
-static bool libretro_supports_bitmasks = false;
-
-static MDFN_Surface *surf = NULL;
-
-static bool failed_init = false;
-
-static unsigned video_width = 0;
-static unsigned video_height = 0;
-
-static uint64_t video_frames = 0;
-static uint64_t audio_frames = 0;
-
-#include "mednafen/pce_fast/pcecd.h"
-
-/* Frameskipping Support */
-
-static unsigned frameskip_type             = 0;
-static unsigned frameskip_threshold        = 0;
-static uint16_t frameskip_counter          = 0;
-
-static bool retro_audio_buff_active        = false;
-static unsigned retro_audio_buff_occupancy = 0;
-static bool retro_audio_buff_underrun      = false;
-/* Maximum number of consecutive frames that
- * can be skipped */
-#define FRAMESKIP_MAX 30
-
-static unsigned audio_latency              = 0;
-static bool update_audio_latency           = false;
 
 static void retro_audio_buff_status_cb(
       bool active, unsigned occupancy, bool underrun_likely)
