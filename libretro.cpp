@@ -1248,7 +1248,7 @@ static int HuCLoadCD(const char *bios_path)
 }
 
 
-static int LoadCD(std::vector<CDIF *> *CDInterfaces)
+static int LoadCD(std::vector<CDIF *> *cdif)
 {
  std::string bios_path = MDFN_MakeFName(MDFNMKF_FIRMWARE, 0, setting_pce_fast_cdbios.c_str() );
 
@@ -1260,7 +1260,7 @@ static int LoadCD(std::vector<CDIF *> *CDInterfaces)
   return(0);
 
  PCECD_Drive_SetDisc(true, NULL, true);
- PCECD_Drive_SetDisc(false, (*CDInterfaces)[0], true);
+ PCECD_Drive_SetDisc(false, (*cdif)[0], true);
 
  return(LoadCommon());
 }
@@ -1529,7 +1529,7 @@ end:
 bool set_eject_state(bool ejected)
 {
 	if(ejected)PCECD_Drive_SetDisc(true, NULL, true);
-	else PCECD_Drive_SetDisc(false, (*CDInterfaces)[disk_index], true);
+	else PCECD_Drive_SetDisc(false, CDInterfaces[disk_index], true);
 	disk_ejected=ejected;
 	return true;
 }
