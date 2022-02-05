@@ -1527,11 +1527,10 @@ end:
 
 bool set_eject_state(bool ejected)
 {
-	bool r=false;
-	if(ejected)r=PCECD_Drive_SetDisc(true, NULL, true);
-	else r=PCECD_Drive_SetDisc(false, (*CDInterfaces)[disk_index], true);
-	if(r)disk_ejected=ejected;
-	return r;
+	if(ejected)PCECD_Drive_SetDisc(true, NULL, true);
+	else PCECD_Drive_SetDisc(false, (*CDInterfaces)[disk_index], true);
+	disk_ejected=ejected;
+	return true;
 }
 
 bool get_eject_state(void)
