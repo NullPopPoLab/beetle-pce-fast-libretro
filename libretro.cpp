@@ -117,6 +117,8 @@ static unsigned disk_index = 0;
 static std::vector<std::string> disk_label;
 struct retro_disk_control_ext_callback dskcb;
 
+static std::vector<CDIF *> CDInterfaces;	// FIXME: Cleanup on error out.
+
 /* Composite palette 2020/09/14
  * authors: Dshadoff, Turboxray, Furrtek, Kitrinx and others
  */
@@ -1522,7 +1524,6 @@ end:
    filestream_close(fp);
 }
 
- static std::vector<CDIF *> CDInterfaces;	// FIXME: Cleanup on error out.
 // TODO: LoadCommon()
 
 bool set_eject_state(bool ejected)
