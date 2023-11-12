@@ -64,7 +64,7 @@ uint8 SaveRAM[2048];
 static bool cdimagecache = false;
 static bool use_palette = false;
 
-std::string setting_pce_fast_cdbios = "pcengine/syscard3.pce";
+std::string setting_pce_fast_cdbios = "syscard3.pce";
 
 extern MDFNGI EmulatedPCE_Fast;
 
@@ -1901,22 +1901,22 @@ static void check_variables(bool first_run)
             cdimagecache = true;
 
       var.key                 = "pce_fast_cdbios";
-      setting_pce_fast_cdbios = "pcengine/syscard3.pce";
+      setting_pce_fast_cdbios = "syscard3.pce";
 
       if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
       {
          if (strcmp(var.value, "System Card 3") == 0)
-            setting_pce_fast_cdbios = "pcengine/syscard3.pce";
+            setting_pce_fast_cdbios = "syscard3.pce";
          else if (strcmp(var.value, "System Card 2") == 0)
-            setting_pce_fast_cdbios = "pcengine/syscard2.pce";
+            setting_pce_fast_cdbios = "syscard2.pce";
          else if (strcmp(var.value, "System Card 1") == 0)
-            setting_pce_fast_cdbios = "pcengine/syscard1.pce";
+            setting_pce_fast_cdbios = "syscard1.pce";
          else if (strcmp(var.value, "Games Express") == 0)
-            setting_pce_fast_cdbios = "pcengine/gexpress.pce";
+            setting_pce_fast_cdbios = "gexpress.pce";
          else if (strcmp(var.value, "System Card 3 US") == 0)
-            setting_pce_fast_cdbios = "pcengine/syscard3u.pce";
+            setting_pce_fast_cdbios = "syscard3u.pce";
          else if (strcmp(var.value, "System Card 2 US") == 0)
-            setting_pce_fast_cdbios = "pcengine/syscard2u.pce";
+            setting_pce_fast_cdbios = "syscard2u.pce";
       }
    }
 
