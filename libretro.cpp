@@ -49,6 +49,8 @@ std::string retro_base_directory;
 #define FB_WIDTH 512
 #define FB_HEIGHT 243
 
+#define CUSTOM_VERSION "+NC41"
+
 static const uint8 BRAM_Init_String[8] = { 'H', 'U', 'B', 'M', 0x00, 0x88, 0x10, 0x80 }; //"HUBM\x00\x88\x10\x80";
 
 ArcadeCard *arcade_card = NULL;
@@ -2402,7 +2404,7 @@ void retro_get_system_info(struct retro_system_info *info)
 #ifndef GIT_VERSION
 #define GIT_VERSION ""
 #endif
-   info->library_version  = MEDNAFEN_CORE_VERSION GIT_VERSION;
+   info->library_version  = MEDNAFEN_CORE_VERSION GIT_VERSION CUSTOM_VERSION;
    info->need_fullpath    = true;
    info->valid_extensions = MEDNAFEN_CORE_EXTENSIONS;
    info->block_extract    = false;
