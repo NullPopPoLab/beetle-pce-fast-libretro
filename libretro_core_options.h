@@ -530,34 +530,6 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      "Turbo Toggle",
-      NULL,
-      "Enable the turbo toggle hotkeys (buttons III and IV).",
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      "Alternate Turbo Hotkey",
-      NULL,
-      "Assign RetroPad's L3/R3 buttons as turbo toggle hotkeys instead of buttons III and IV. Works only as long as nothing is assigned to the L3/R3 buttons. You can avoid remapping buttons III and IV when switching to 6-button controller mode with this.",
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       "Turbo Delay",
       NULL,
