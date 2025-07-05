@@ -1722,22 +1722,24 @@ static void set_volume (uint32_t *ptr, unsigned number)
 }
 
 #define MAX_PLAYERS 5
-#define MAX_BUTTONS 15
+#define MAX_INPUT_TURBOABLES 8
+#define MAX_INPUT_BUTTONS 12
+#define MAX_INPUT_FLAGS 15
 static uint8_t input_type[MAX_PLAYERS] = {};
 static uint8_t input_buf[MAX_PLAYERS][5] = {};
 static float mouse_sensitivity = 1.0f;
 static bool disable_softreset = false;
 
 // Array to keep track of whether a given player's button is turbo
-static int turbo_enable[MAX_PLAYERS][MAX_BUTTONS] = {};
+static int turbo_enable[MAX_PLAYERS][MAX_INPUT_BUTTONS] = {};
 // Array to keep track of each buttons turbo status
-static int turbo_counter[MAX_PLAYERS][MAX_BUTTONS] = {};
+static int turbo_counter[MAX_PLAYERS][MAX_INPUT_BUTTONS] = {};
 // The number of frames between each firing of a turbo button
 static int Turbo_Delay;
 static int Turbo_Toggling = 1;
 static bool turbo_toggle_alt = false;
 static int psg_channels_volume[6] = { 100, 100, 100, 100, 100, 100 };
-static int turbo_toggle_down[MAX_PLAYERS][MAX_BUTTONS] = {};
+static int turbo_toggle_down[MAX_PLAYERS][MAX_INPUT_BUTTONS] = {};
 
 static void check_variables(bool first_run)
 {
@@ -2150,7 +2152,7 @@ static void update_input(void)
    static int turbo_map[]     = { -1,-1,-1,-1,-1,-1,-1,-1, 1, 0,-1,-1,-1,-1,-1 };
    static int turbo_map_alt[] = { -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1, 1, 0 };
    int *turbo_map_selected    = (!turbo_toggle_alt ? turbo_map : turbo_map_alt);
-   static unsigned map[] = {
+   static unsigned map[MAX_INPUT_FLAGS] = {
       RETRO_DEVICE_ID_JOYPAD_A, // I
       RETRO_DEVICE_ID_JOYPAD_B, // II
       RETRO_DEVICE_ID_JOYPAD_SELECT, // SELECT
@@ -2163,9 +2165,9 @@ static void update_input(void)
       RETRO_DEVICE_ID_JOYPAD_Z, // IV 
       RETRO_DEVICE_ID_JOYPAD_Y, // V
       RETRO_DEVICE_ID_JOYPAD_X, // VI 
-      RETRO_DEVICE_ID_JOYPAD_MENU, // mode 
-      RETRO_DEVICE_ID_JOYPAD_L3,
-      RETRO_DEVICE_ID_JOYPAD_R3
+      RETRO_DEVICE_ID_JOYPAD_MENU, // switch AvenuePad6 enablity 
+      RETRO_DEVICE_ID_JOYPAD_L3, // dummy? 
+      RETRO_DEVICE_ID_JOYPAD_R3 // dummy? 
    };
 
    for (j = 0; j < MAX_PLAYERS; j++)
@@ -2177,24 +2179,21 @@ static void update_input(void)
          for (i = 0; i < RETRO_DEVICE_ID_JOYPAD_BUTTON_MAX; i++)
             joy_bits[j] |= input_state_cb(j, RETRO_DEVICE_JOYPAD, 0, i) ? (1 << i) : 0;
       }
-   }
 
-   for (unsigned j = 0; j < MAX_PLAYERS; j++)
-   {
       switch (input_type[j])
       {
       case RETRO_DEVICE_JOYPAD:
       {
          uint16_t input_state = 0;
 
+         // switch AvenuePad6 enablity  
+         input_state |= (joy_bits[j] & (1 << map[12])) ? (1 << 12) : 0;
+
          // read normal inputs
-         for (unsigned i = 0; i < MAX_BUTTONS; i++)
+         for (unsigned i = 0; i < MAX_INPUT_BUTTONS; i++)
          {
             input_state |= (joy_bits[j] & (1 << map[i])) ? (1 << i) : 0;
 
-            // disable soft reset
-            if (disable_softreset == true)
-               if ((input_state & 0xC) == 0xC) input_state &= ~0xC;
 
             // handle turbo buttons
             if (turbo_enable[j][i] == 1)                    // Check whether a given button is turbo-capable
@@ -2232,6 +2231,10 @@ static void update_input(void)
                else turbo_toggle_down[j][i] = 0;
             }
          }
+
+         // disable soft reset
+         if (disable_softreset == true)
+            if ((input_state & 0xC) == 0xC) input_state &= ~0xC;
 
          // Input data must be little endian.
          input_buf[j][0] = (input_state >> 0) & 0xff;
