@@ -1733,6 +1733,8 @@ static bool disable_softreset = false;
 // The number of frames between each firing of a turbo button
 static int Turbo_Delay=3;
 
+static int psg_channels_volume[6] = { 100, 100, 100, 100, 100, 100 };
+
 static void check_variables(bool first_run)
 {
    struct retro_variable var = {0};
