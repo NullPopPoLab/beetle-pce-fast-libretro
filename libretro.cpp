@@ -1730,16 +1730,8 @@ static uint8_t input_buf[MAX_PLAYERS][5] = {};
 static float mouse_sensitivity = 1.0f;
 static bool disable_softreset = false;
 
-// Array to keep track of whether a given player's button is turbo
-static int turbo_enable[MAX_PLAYERS][MAX_INPUT_BUTTONS] = {};
-// Array to keep track of each buttons turbo status
-static int turbo_counter[MAX_PLAYERS][MAX_INPUT_BUTTONS] = {};
 // The number of frames between each firing of a turbo button
-static int Turbo_Delay;
-static int Turbo_Toggling = 1;
-static bool turbo_toggle_alt = false;
-static int psg_channels_volume[6] = { 100, 100, 100, 100, 100, 100 };
-static int turbo_toggle_down[MAX_PLAYERS][MAX_INPUT_BUTTONS] = {};
+static int Turbo_Delay=3;
 
 static void check_variables(bool first_run)
 {
@@ -1907,34 +1899,12 @@ static void check_variables(bool first_run)
        }
    }
  
-   // Set Turbo_Toggling
-   var.key = "pce_fast_turbo_toggling";
-
-   if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
-   {
-      if (strcmp(var.value, "enabled") == 0)
-         Turbo_Toggling = 1;
-      else
-         Turbo_Toggling = 0;
-   }
-
    // Set TURBO_DELAY
    var.key = "pce_fast_turbo_delay";
 
    if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
    {
       Turbo_Delay = atoi(var.value);
-   }
-
-   //  False sets turbo hotkey X/Y, true assigns hotkey to L3/R3
-   var.key = "pce_fast_turbo_toggle_hotkey";
-
-   if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
-   {
-      if (strcmp(var.value, "enabled") == 0)
-         turbo_toggle_alt = true;
-      else
-         turbo_toggle_alt = false;
    }
 
    var.key = "pce_fast_disable_softreset";
@@ -1978,9 +1948,18 @@ bool retro_load_game(const struct retro_game_info *info)
       { INDEX, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_Z,     "IV" },\
       { INDEX, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_Y,     "V" },\
       { INDEX, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_X,     "VI" },\
-      { INDEX, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_MENU,    "Mode Switch" },\
-      { INDEX, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_SELECT,    "Select" },\
-      { INDEX, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_START,    "Run" },
+      { INDEX, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_SELECT,  "Select" },\
+      { INDEX, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_START,   "Run" },\
+      { INDEX, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_G1,    "Turbo I" },\
+      { INDEX, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_G2,    "Turbo II" },\
+      { INDEX, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_G3,    "Turbo III" },\
+      { INDEX, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_G4,    "Turbo IV" },\
+      { INDEX, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_G5,    "Turbo V" },\
+      { INDEX, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_G6,    "Turbo VI" },\
+      { INDEX, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L0,    "Turbo Select" },\
+      { INDEX, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_R0,    "Turbo Run" },\
+      { INDEX, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_MENU,  "Mode Switch" },
+
       button_ids(0)
       button_ids(1)
       button_ids(2)
@@ -2149,9 +2128,6 @@ static void update_input(void)
    unsigned i,j;
    int32_t joy_bits[MAX_PLAYERS] = {0};
 
-   static int turbo_map[]     = { -1,-1,-1,-1,-1,-1,-1,-1, 1, 0,-1,-1,-1,-1,-1 };
-   static int turbo_map_alt[] = { -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1, 1, 0 };
-   int *turbo_map_selected    = (!turbo_toggle_alt ? turbo_map : turbo_map_alt);
    static unsigned map[MAX_INPUT_FLAGS] = {
       RETRO_DEVICE_ID_JOYPAD_A, // I
       RETRO_DEVICE_ID_JOYPAD_B, // II
@@ -2170,21 +2146,38 @@ static void update_input(void)
       RETRO_DEVICE_ID_JOYPAD_R3 // dummy? 
    };
 
+   typedef struct TurboAssign_{
+      int target;
+      int btn;
+      int cnt[MAX_PLAYERS];
+   } TurboAssign;
+
+   static TurboAssign turbo[MAX_INPUT_TURBOABLES] = {
+      {0,RETRO_DEVICE_ID_JOYPAD_G1,{0}}, // I
+      {1,RETRO_DEVICE_ID_JOYPAD_G2,{0}}, // II
+      {8,RETRO_DEVICE_ID_JOYPAD_G3,{0}}, // III
+      {9,RETRO_DEVICE_ID_JOYPAD_G4,{0}}, // IV
+      {10,RETRO_DEVICE_ID_JOYPAD_G5,{0}}, // V
+      {11,RETRO_DEVICE_ID_JOYPAD_G6,{0}}, // VI
+      {2,RETRO_DEVICE_ID_JOYPAD_L0,{0}}, // SELECT
+      {3,RETRO_DEVICE_ID_JOYPAD_R0,{0}}, // RUN
+   };
+
    for (j = 0; j < MAX_PLAYERS; j++)
    {
-      if (libretro_supports_bitmasks)
-         joy_bits[j] = input_state_cb(j, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_MASK);
-      else
-      {
-         for (i = 0; i < RETRO_DEVICE_ID_JOYPAD_BUTTON_MAX; i++)
-            joy_bits[j] |= input_state_cb(j, RETRO_DEVICE_JOYPAD, 0, i) ? (1 << i) : 0;
-      }
-
       switch (input_type[j])
       {
       case RETRO_DEVICE_JOYPAD:
       {
          uint16_t input_state = 0;
+
+         if (libretro_supports_bitmasks)
+            joy_bits[j] = input_state_cb(j, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_MASK);
+         else
+         {
+            for (i = 0; i < RETRO_DEVICE_ID_JOYPAD_BUTTON_MAX; i++)
+               joy_bits[j] |= input_state_cb(j, RETRO_DEVICE_JOYPAD, 0, i) ? (1 << i) : 0;
+         }
 
          // switch AvenuePad6 enablity  
          input_state |= (joy_bits[j] & (1 << map[12])) ? (1 << 12) : 0;
@@ -2193,43 +2186,17 @@ static void update_input(void)
          for (unsigned i = 0; i < MAX_INPUT_BUTTONS; i++)
          {
             input_state |= (joy_bits[j] & (1 << map[i])) ? (1 << i) : 0;
+         }
 
-
-            // handle turbo buttons
-            if (turbo_enable[j][i] == 1)                    // Check whether a given button is turbo-capable
-            {
-               if (input_state & (1 << i))
-               {
-                  if (turbo_counter[j][i] < 2)              // Some PCE games needs 2 frames to react to button presses, so
-                     input_state |= 1 << i;                 // trigger turbo button at counter 0 and 1
-                  else
-                     input_state &= ~(1 << i);
-                  turbo_counter[j][i]++;                    // Counter is incremented by 1
-                  if (turbo_counter[j][i] > Turbo_Delay)    // When the counter exceeds turbo delay, reset counter to zero
-                     turbo_counter[j][i] = 0;
-               }
-               else
-                  turbo_counter[j][i] = 0;                  // Reset counter if button is not pressed.
+         for (i = 0; i < MAX_INPUT_TURBOABLES; i++)
+         {
+            if(!(joy_bits[j] & (1<<turbo[i].btn))){
+               turbo[i].cnt[j]=0;
+               continue;
             }
-            else
-               turbo_counter[j][i] = 0;                     // Reset counter if button is not pressed.
-
-            // handle 2/6 button mode switching
-            if (turbo_map_selected[i] != -1 && Turbo_Toggling && !AVPad6Enabled[j])
-            {
-               if (input_state_cb(j, RETRO_DEVICE_JOYPAD, 0, map[i]))
-               {
-                  if (turbo_toggle_down[j][i] == 0)
-                  {
-                     turbo_toggle_down[j][i] = 1;
-                     turbo_enable[j][turbo_map_selected[i]] = turbo_enable[j][turbo_map_selected[i]] ^ 1;
-                     MDFN_DispMessage("Pad %i Button %s Turbo %s", j + 1,
-                        i == (!turbo_toggle_alt ? 9 : 14) ? "I" : "II",
-                        turbo_enable[j][turbo_map_selected[i]] ? "ON" : "OFF" );
-                  }
-               }
-               else turbo_toggle_down[j][i] = 0;
-            }
+            if(++turbo[i].cnt[j]<=Turbo_Delay)continue;
+            turbo[i].cnt[j]=0;
+            input_state|=1<<turbo[i].target;
          }
 
          // disable soft reset

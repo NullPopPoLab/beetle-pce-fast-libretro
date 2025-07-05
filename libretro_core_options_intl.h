@@ -92,10 +92,6 @@ extern "C" {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_AR NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_AR NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_AR NULL
-#define PCE_FAST_TURBO_TOGGLING_LABEL_AR NULL
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_AR NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_AR NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_AR NULL
 #define PCE_FAST_TURBO_DELAY_LABEL_AR NULL
 #define PCE_FAST_TURBO_DELAY_INFO_0_AR NULL
 #define PCE_FAST_CDIMAGECACHE_LABEL_AR NULL
@@ -608,34 +604,6 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_AR,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_AR,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_AR,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_AR,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       PCE_FAST_TURBO_DELAY_LABEL_AR,
       NULL,
@@ -936,10 +904,6 @@ struct retro_core_options_v2 options_ar = {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_AST NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_AST NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_AST NULL
-#define PCE_FAST_TURBO_TOGGLING_LABEL_AST NULL
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_AST NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_AST NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_AST NULL
 #define PCE_FAST_TURBO_DELAY_LABEL_AST NULL
 #define PCE_FAST_TURBO_DELAY_INFO_0_AST NULL
 #define PCE_FAST_CDIMAGECACHE_LABEL_AST NULL
@@ -1452,34 +1416,6 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_AST,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_AST,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_AST,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_AST,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       PCE_FAST_TURBO_DELAY_LABEL_AST,
       NULL,
@@ -1780,10 +1716,6 @@ struct retro_core_options_v2 options_ast = {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_BE "Выбар 2- ці 6-ці кнопкавага кантролера па змаўчанні для парта 4. Дадзеная опцыя ўжываецца толькі пры запуску ядра. Для пераключэння на ляту выкарыстоўвайце кнопку 'Змяніць рэжым'. УВАГА: у несумяшчальных гульнях 6-кнопкавы геймпад можа выклікаць багі кіравання."
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_BE "Тып джойсціка Гульца 5"
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_BE "Выбар 2- ці 6-ці кнопкавага кантролера па змаўчанні для парта 5. Дадзеная опцыя ўжываецца толькі пры запуску ядра. Для пераключэння на ляту выкарыстоўвайце кнопку 'Змяніць рэжым'. УВАГА: у несумяшчальных гульнях 6-кнопкавы геймпад можа выклікаць багі кіравання."
-#define PCE_FAST_TURBO_TOGGLING_LABEL_BE "Пераключальнік турба"
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_BE "Актывуе гарачыя клавішы для ўключэння турба (кнопкі III і IV)."
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_BE "Альтэрнатыўнае ўключэнне турба"
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_BE "Прызначае кнопкі RetroPad'а L3/R3 у якасці гарачых клавіш для ўключэння турба замест кнопак III і IV. Працуе толькі пры адсутнасці прывязак да кнопак L3/R3. Дазваляе пазбегнуць перапрызначэння кнопак III і IV у рэжыме 6-кнопкавага кантролера."
 #define PCE_FAST_TURBO_DELAY_LABEL_BE "Затрымка турба"
 #define PCE_FAST_TURBO_DELAY_INFO_0_BE "Наладжвае прамежак паміж паўторамі націскаў (у кадрах)."
 #define PCE_FAST_CDIMAGECACHE_LABEL_BE "Кэшаваць выяву CD (патрабуецца перазапуск)"
@@ -2296,34 +2228,6 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_BE,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_BE,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_BE,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_BE,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       PCE_FAST_TURBO_DELAY_LABEL_BE,
       NULL,
@@ -2624,10 +2528,6 @@ struct retro_core_options_v2 options_be = {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_BG NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_BG NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_BG NULL
-#define PCE_FAST_TURBO_TOGGLING_LABEL_BG NULL
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_BG NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_BG NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_BG NULL
 #define PCE_FAST_TURBO_DELAY_LABEL_BG NULL
 #define PCE_FAST_TURBO_DELAY_INFO_0_BG NULL
 #define PCE_FAST_CDIMAGECACHE_LABEL_BG NULL
@@ -3140,34 +3040,6 @@ struct retro_core_option_v2_definition option_defs_bg[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_BG,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_BG,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_BG,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_BG,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       PCE_FAST_TURBO_DELAY_LABEL_BG,
       NULL,
@@ -3468,10 +3340,6 @@ struct retro_core_options_v2 options_bg = {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_CA NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_CA NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_CA NULL
-#define PCE_FAST_TURBO_TOGGLING_LABEL_CA NULL
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_CA NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_CA NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_CA NULL
 #define PCE_FAST_TURBO_DELAY_LABEL_CA NULL
 #define PCE_FAST_TURBO_DELAY_INFO_0_CA NULL
 #define PCE_FAST_CDIMAGECACHE_LABEL_CA NULL
@@ -3984,34 +3852,6 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_CA,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_CA,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_CA,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_CA,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       PCE_FAST_TURBO_DELAY_LABEL_CA,
       NULL,
@@ -4312,10 +4152,6 @@ struct retro_core_options_v2 options_ca = {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_CHS "选择端口 4 手柄默认为 2 键还是 6 键。此选项仅在核心启动时应用，如果您想在内容运行时切换，请使用 \"模式切换 \"按钮。注意：在不兼容的游戏中，6 按钮手柄可能会有奇怪的行为。"
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_CHS "P5 默认手柄类型"
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_CHS "选择端口 5 手柄默认为 2 键还是 6 键。此选项仅在核心启动时应用，如果您想在内容运行时切换，请使用 \"模式切换 \"按钮。注意：在不兼容的游戏中，6 按钮手柄可能会有奇怪的行为。"
-#define PCE_FAST_TURBO_TOGGLING_LABEL_CHS "连发切换"
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_CHS "启用连发切换开关（按键III和IV）"
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_CHS "备用连发热键"
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_CHS "将RetroPad虚拟控制器的L3/R3按键指定为连发切换热键，而不是按键III和IV。仅在没有给L3/R3按钮分配任何功能的情况下才起作用。在切换到6键控制器模式时，你可以用它来避免重新设置按钮III和IV。"
 #define PCE_FAST_TURBO_DELAY_LABEL_CHS "连发延迟"
 #define PCE_FAST_TURBO_DELAY_INFO_0_CHS "设置连发两次触发间的间隔（单位为帧）"
 #define PCE_FAST_CDIMAGECACHE_LABEL_CHS "启用CD光盘缓存（重启以生效）"
@@ -4828,34 +4664,6 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_CHS,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_CHS,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_CHS,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_CHS,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       PCE_FAST_TURBO_DELAY_LABEL_CHS,
       NULL,
@@ -5156,10 +4964,6 @@ struct retro_core_options_v2 options_chs = {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_CHT "選擇連接埠 4 手把預設為 2 個按鈕還是 6 個按鈕。 此選項僅在核心啟動時套用，如果您想在內容運行時進行切換，請使用「模式切換」按鈕。 注意：6 按鈕手把在不相容的遊戲中可能會出現奇怪的行為。"
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_CHT "P3預設手把類型"
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_CHT "選擇連接埠 5 手把預設為 2 個按鈕還是 6 個按鈕。 此選項僅在核心啟動時套用，如果您想在內容運行時進行切換，請使用「模式切換」按鈕。 注意：6 按鈕手把在不相容的遊戲中可能會出現奇怪的行為。"
-#define PCE_FAST_TURBO_TOGGLING_LABEL_CHT "連發開關"
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_CHT "開啟時[III/IV鍵]作為連發的開關, 提供給[I/II鍵]使用。"
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_CHT "備用連發按鍵"
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_CHT "開啟時[L3/R3鍵]作為連發的開關, 僅限[L3/R3鍵]未設定按鍵時生效, 用於切換為主機的6鍵控制器。"
 #define PCE_FAST_TURBO_DELAY_LABEL_CHT "連發間隔"
 #define PCE_FAST_TURBO_DELAY_INFO_0_CHT "設定連發的間隔時間(幀數)。"
 #define PCE_FAST_CDIMAGECACHE_LABEL_CHT "映像檔快取 (需要重新啟動)"
@@ -5672,34 +5476,6 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_CHT,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_CHT,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_CHT,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_CHT,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       PCE_FAST_TURBO_DELAY_LABEL_CHT,
       NULL,
@@ -6000,10 +5776,6 @@ struct retro_core_options_v2 options_cht = {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_CS "Zvolte, zda má mít joypad port 4 ve výchozím nastavení 2 nebo 6 tlačítek. Tato volba se použije pouze při spuštění jádra, pokud chcete přepínat za běhu obsahu, použijte tlačítko \"Přepínač režimů\". POZNÁMKA: 6tlačítkový joypad může mít v nekompatibilních hrách podivné chování."
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_CS "P5 Výchozí typ joypadu"
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_CS "Zvolte, zda má mít joypad portu 5 ve výchozím nastavení 2 nebo 6 tlačítek. Tato volba se použije pouze při spuštění jádra, pokud chcete přepínat za běhu obsahu, použijte tlačítko \"Přepínač režimů\". POZNÁMKA: 6tlačítkový joypad může mít v nekompatibilních hrách podivné chování."
-#define PCE_FAST_TURBO_TOGGLING_LABEL_CS "Přepínač turba"
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_CS "Povolit hotkeys přepínat turbo (tlačítka III a IV)."
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_CS "Alternativní Hotkey turbo"
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_CS "Přiřaďte tlačítkům L3/R3 zařízení RetroPad rychlé přepínání turba hotkeys místo tlačítek III a IV. Funguje pouze v případě, že tlačítkům L3/R3 není nic přiřazeno. Díky tomu se můžete vyhnout přemapování tlačítek III a IV při přepnutí do režimu šestitlačítkového ovladače."
 #define PCE_FAST_TURBO_DELAY_LABEL_CS "Zpoždění turba"
 #define PCE_FAST_TURBO_DELAY_INFO_0_CS "Nastavení doby mezi nástupem turba (ve snímcích)."
 #define PCE_FAST_CDIMAGECACHE_LABEL_CS "Vyrovnávací paměť obrazu CD (nutný restart)"
@@ -6516,34 +6288,6 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_CS,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_CS,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_CS,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_CS,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       PCE_FAST_TURBO_DELAY_LABEL_CS,
       NULL,
@@ -6844,10 +6588,6 @@ struct retro_core_options_v2 options_cs = {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_CY NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_CY NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_CY NULL
-#define PCE_FAST_TURBO_TOGGLING_LABEL_CY NULL
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_CY NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_CY NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_CY NULL
 #define PCE_FAST_TURBO_DELAY_LABEL_CY NULL
 #define PCE_FAST_TURBO_DELAY_INFO_0_CY NULL
 #define PCE_FAST_CDIMAGECACHE_LABEL_CY NULL
@@ -7360,34 +7100,6 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_CY,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_CY,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_CY,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_CY,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       PCE_FAST_TURBO_DELAY_LABEL_CY,
       NULL,
@@ -7688,10 +7400,6 @@ struct retro_core_options_v2 options_cy = {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_DA NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_DA NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_DA NULL
-#define PCE_FAST_TURBO_TOGGLING_LABEL_DA NULL
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_DA NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_DA NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_DA NULL
 #define PCE_FAST_TURBO_DELAY_LABEL_DA NULL
 #define PCE_FAST_TURBO_DELAY_INFO_0_DA NULL
 #define PCE_FAST_CDIMAGECACHE_LABEL_DA NULL
@@ -8204,34 +7912,6 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_DA,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_DA,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_DA,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_DA,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       PCE_FAST_TURBO_DELAY_LABEL_DA,
       NULL,
@@ -8532,10 +8212,6 @@ struct retro_core_options_v2 options_da = {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_DE "Hier wählen, ob Joypad von Port 4 standardmäßig 2 oder 6 Tasten besitzen soll. Diese Option wird nur beim Start des Cores ausgeführt. Wenn umgeschaltet werden soll, während der Inhalt läuft, bitte den „Moduswechsel“ verwenden. HINWEIS: Ein 6-Tasten-Joypad kann sich in nicht kompatiblen Spielen seltsam verhalten."
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_DE "P5 Standard-Joypad-Typ"
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_DE "Hier wählen, ob Joypad von Port 5 standardmäßig 2 oder 6 Tasten besitzen soll. Diese Option wird nur beim Start des Cores ausgeführt. Wenn umgeschaltet werden soll, während der Inhalt läuft, bitte den „Moduswechsel“ verwenden. HINWEIS: Ein 6-Tasten-Joypad kann sich in nicht kompatiblen Spielen seltsam verhalten."
-#define PCE_FAST_TURBO_TOGGLING_LABEL_DE "Turbo-Umschalter"
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_DE "Turbo-Umschalt-Hotkeys (Tasten III und IV) aktivieren."
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_DE "Alternative Turbo-Hotkeys"
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_DE "Die L3/R3-Tasten des RetroPads als Turbo-Umschalt-Hotkeys anstelle der Tasten III und IV verwenden. Funktioniert nur, solange den L3/R3-Tasten nichts zugewiesen wird. Hiermit kann die Umbelegung der Tasten III und IV vermieden werden, wenn zum 6-Tasten-Controller-Modus gewechselt wird."
 #define PCE_FAST_TURBO_DELAY_LABEL_DE "Turbo-Verzögerung"
 #define PCE_FAST_TURBO_DELAY_INFO_0_DE "Die Zeit zwischen den Turbo-Signalen (in Frames) einstellen."
 #define PCE_FAST_CDIMAGECACHE_LABEL_DE "CD-Abbild-Cache (Neustart erforderlich)"
@@ -9048,34 +8724,6 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_DE,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_DE,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_DE,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_DE,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       PCE_FAST_TURBO_DELAY_LABEL_DE,
       NULL,
@@ -9376,10 +9024,6 @@ struct retro_core_options_v2 options_de = {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_EL NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_EL NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_EL NULL
-#define PCE_FAST_TURBO_TOGGLING_LABEL_EL NULL
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_EL NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_EL NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_EL NULL
 #define PCE_FAST_TURBO_DELAY_LABEL_EL "Καθυστέρηση Τούρμπο"
 #define PCE_FAST_TURBO_DELAY_INFO_0_EL NULL
 #define PCE_FAST_CDIMAGECACHE_LABEL_EL NULL
@@ -9892,34 +9536,6 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_EL,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_EL,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_EL,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_EL,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       PCE_FAST_TURBO_DELAY_LABEL_EL,
       NULL,
@@ -10220,10 +9836,6 @@ struct retro_core_options_v2 options_el = {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_EN "Choose if port 4 joypad should be 2 or 6 buttons by default. This option is only applied when the core starts, if you want to switch while content is running, use the 'Mode Switch' button. NOTE: 6 buttons joypad can have weird behaviours in non-compatible games."
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_EN NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_EN "Choose if port 5 joypad should be 2 or 6 buttons by default. This option is only applied when the core starts, if you want to switch while content is running, use the 'Mode Switch' button. NOTE: 6 buttons joypad can have weird behaviours in non-compatible games."
-#define PCE_FAST_TURBO_TOGGLING_LABEL_EN NULL
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_EN NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_EN NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_EN NULL
 #define PCE_FAST_TURBO_DELAY_LABEL_EN NULL
 #define PCE_FAST_TURBO_DELAY_INFO_0_EN NULL
 #define PCE_FAST_CDIMAGECACHE_LABEL_EN NULL
@@ -10736,34 +10348,6 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_EN,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_EN,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_EN,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_EN,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       PCE_FAST_TURBO_DELAY_LABEL_EN,
       NULL,
@@ -11064,10 +10648,6 @@ struct retro_core_options_v2 options_en = {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_EO NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_EO NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_EO NULL
-#define PCE_FAST_TURBO_TOGGLING_LABEL_EO NULL
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_EO NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_EO NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_EO NULL
 #define PCE_FAST_TURBO_DELAY_LABEL_EO NULL
 #define PCE_FAST_TURBO_DELAY_INFO_0_EO NULL
 #define PCE_FAST_CDIMAGECACHE_LABEL_EO NULL
@@ -11580,34 +11160,6 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_EO,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_EO,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_EO,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_EO,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       PCE_FAST_TURBO_DELAY_LABEL_EO,
       NULL,
@@ -11908,10 +11460,6 @@ struct retro_core_options_v2 options_eo = {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_ES "Indica si el mando del puerto 4 debería ser uno de 2 o 6 botones por defecto. Esta opción se aplica únicamente al iniciar el núcleo: si deseas cambiar el tipo de mando mientras se esté ejecutando un contenido, debes usar el botón de cambio de modo. NOTA: los mandos de 6 botones pueden producir comportamientos extraños en juegos que no sean compatibles con este mando."
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_ES "Tipo de mando predeterminado del J5"
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_ES "Indica si el mando del puerto 5 debería ser uno de 2 o 6 botones por defecto. Esta opción se aplica únicamente al iniciar el núcleo: si deseas cambiar el tipo de mando mientras se esté ejecutando un contenido, debes usar el botón de cambio de modo. NOTA: los mandos de 6 botones pueden producir comportamientos extraños en juegos que no sean compatibles con este mando."
-#define PCE_FAST_TURBO_TOGGLING_LABEL_ES "Activación manual del turbo"
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_ES "Activa las teclas rápidas para activar o desactivar el turbo (los botones III y IV)."
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_ES "Teclas rápidas alternativas para el turbo"
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_ES "Asigna los botones L3/R3 del RetroPad como teclas rápidas para activar o desactivar turbo en vez de usar los botones III y IV. Solo funciona mientras no haya otra acción asignada a los botones L3/R3. Con esta opción no tendrás que reasignar los botones III y IV cuando cambies al modo de mando de 6 botones."
 #define PCE_FAST_TURBO_DELAY_LABEL_ES "Retraso del turbo"
 #define PCE_FAST_TURBO_DELAY_INFO_0_ES "Ajusta el tiempo que pasará entre cada pulsación del turbo (en fotogramas)."
 #define PCE_FAST_CDIMAGECACHE_LABEL_ES "Cachear imagen de CD (es necesario reiniciar)"
@@ -12424,34 +11972,6 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_ES,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_ES,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_ES,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_ES,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       PCE_FAST_TURBO_DELAY_LABEL_ES,
       NULL,
@@ -12752,10 +12272,6 @@ struct retro_core_options_v2 options_es = {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_FA NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_FA NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_FA NULL
-#define PCE_FAST_TURBO_TOGGLING_LABEL_FA NULL
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_FA NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_FA NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_FA NULL
 #define PCE_FAST_TURBO_DELAY_LABEL_FA NULL
 #define PCE_FAST_TURBO_DELAY_INFO_0_FA NULL
 #define PCE_FAST_CDIMAGECACHE_LABEL_FA NULL
@@ -13268,34 +12784,6 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_FA,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_FA,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_FA,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_FA,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       PCE_FAST_TURBO_DELAY_LABEL_FA,
       NULL,
@@ -13596,10 +13084,6 @@ struct retro_core_options_v2 options_fa = {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_FI NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_FI NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_FI NULL
-#define PCE_FAST_TURBO_TOGGLING_LABEL_FI "Vaihda turbo"
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_FI NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_FI "Vaihtoehtoinen turbo-pikanäppäin"
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_FI NULL
 #define PCE_FAST_TURBO_DELAY_LABEL_FI "Turbon viive"
 #define PCE_FAST_TURBO_DELAY_INFO_0_FI "Säädä turbo-tulituksen välistä aikaa (kuvissa)."
 #define PCE_FAST_CDIMAGECACHE_LABEL_FI "CD-levykuvan välimuisti (Uudelleenkäynnistys vaaditaan)"
@@ -14112,34 +13596,6 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_FI,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_FI,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_FI,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_FI,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       PCE_FAST_TURBO_DELAY_LABEL_FI,
       NULL,
@@ -14440,10 +13896,6 @@ struct retro_core_options_v2 options_fi = {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_FR "Choisissez si la manette du port 4 doit avoir 2 ou 6 touches par défaut. Cette option n'est appliquée qu'au démarrage du cœur, si vous voulez changer de contenu lorsque du contenu est en cours d'exécution, utilisez la touche 'Mode Switch'. REMARQUE : Les manettes à 6 touches peuvent avoir des comportements bizarres dans des jeux non compatibles."
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_FR "Type de manette par défaut pour le joueur 5"
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_FR "Choisissez si la manette du port 5 doit avoir 2 ou 6 touches par défaut. Cette option n'est appliquée qu'au démarrage du cœur, si vous voulez changer de contenu lorsque du contenu est en cours d'exécution, utilisez la touche 'Mode Switch'. REMARQUE : Les manettes à 6 touches peuvent avoir des comportements bizarres dans des jeux non compatibles."
-#define PCE_FAST_TURBO_TOGGLING_LABEL_FR "Activer/désactiver le turbo"
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_FR "Activer les touches de raccourci d'activation/désactivation du turbo (touches III et IV)."
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_FR "Touche de raccourci turbo alternative"
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_FR "Affecter les touches L3/R3 de la RetroManette comme raccourcis d'activation/désactivation du turbo au lieu des touches III et IV. Fonctionne uniquement tant que rien n'est assigné aux touches L3/R3. Vous pouvez éviter de remapper les touches III et IV lorsque vous passez en mode manette à 6 boutons avec cette option."
 #define PCE_FAST_TURBO_DELAY_LABEL_FR "Délai du turbo"
 #define PCE_FAST_TURBO_DELAY_INFO_0_FR "Ajuster le temps entre les tirs turbo (en images)."
 #define PCE_FAST_CDIMAGECACHE_LABEL_FR "Mise en cache des images CD (Redémarrage requis)"
@@ -14956,34 +14408,6 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_FR,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_FR,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_FR,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_FR,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       PCE_FAST_TURBO_DELAY_LABEL_FR,
       NULL,
@@ -15284,10 +14708,6 @@ struct retro_core_options_v2 options_fr = {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_GL "Escolla se o mando do porto 4 debe ter 2 ou 6 botóns por defecto. Esta opción só se aplica cando se inicia o núcleo, se queres cambiar mentres o contido está en execución, usa o botón \"Cambio de modo\". NOTA: O mando de 6 botóns pode ter comportamentos estraños en xogos non compatibles."
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_GL "P5 Tipo de Joypad predeterminado"
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_GL "Escolla se o mando do porto 5 debe ter 2 ou 6 botóns por defecto. Esta opción só se aplica cando se inicia o núcleo, se queres cambiar mentres o contido está en execución, usa o botón \"Cambio de modo\". NOTA: O mando de 6 botóns pode ter comportamentos estraños en xogos non compatibles."
-#define PCE_FAST_TURBO_TOGGLING_LABEL_GL "Alternar Turbo"
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_GL "Activa as teclas de acceso rápido do turbo (botóns III e IV)."
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_GL "Tecla de acceso rápido Turbo alternativa"
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_GL "Asigne os botóns L3/R3 de RetroPad como teclas de acceso rápido para alternar turbo en lugar dos botóns III e IV. Funciona só mentres non se asignen nada aos botóns L3/R3. Con isto, pode evitar reasignar os botóns III e IV ao cambiar ao modo de controlador de 6 botóns."
 #define PCE_FAST_TURBO_DELAY_LABEL_GL "Retardo Turbo"
 #define PCE_FAST_TURBO_DELAY_INFO_0_GL "Axuste o tempo entre o lume do turbo (en fotogramas)."
 #define PCE_FAST_CDIMAGECACHE_LABEL_GL "Caché de imaxes de CD (necesario reiniciar)"
@@ -15800,34 +15220,6 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_GL,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_GL,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_GL,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_GL,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       PCE_FAST_TURBO_DELAY_LABEL_GL,
       NULL,
@@ -16128,10 +15520,6 @@ struct retro_core_options_v2 options_gl = {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_HE NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_HE NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_HE NULL
-#define PCE_FAST_TURBO_TOGGLING_LABEL_HE NULL
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_HE NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_HE NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_HE NULL
 #define PCE_FAST_TURBO_DELAY_LABEL_HE NULL
 #define PCE_FAST_TURBO_DELAY_INFO_0_HE NULL
 #define PCE_FAST_CDIMAGECACHE_LABEL_HE NULL
@@ -16644,34 +16032,6 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_HE,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_HE,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_HE,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_HE,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       PCE_FAST_TURBO_DELAY_LABEL_HE,
       NULL,
@@ -16972,10 +16332,6 @@ struct retro_core_options_v2 options_he = {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_HR NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_HR NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_HR NULL
-#define PCE_FAST_TURBO_TOGGLING_LABEL_HR NULL
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_HR NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_HR NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_HR NULL
 #define PCE_FAST_TURBO_DELAY_LABEL_HR NULL
 #define PCE_FAST_TURBO_DELAY_INFO_0_HR NULL
 #define PCE_FAST_CDIMAGECACHE_LABEL_HR NULL
@@ -17488,34 +16844,6 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_HR,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_HR,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_HR,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_HR,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       PCE_FAST_TURBO_DELAY_LABEL_HR,
       NULL,
@@ -17816,10 +17144,6 @@ struct retro_core_options_v2 options_hr = {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_HU "A 4. csatlakozó induláskor 2 vagy 6 gombos-e. Ez a beállítás csak a mag elindításakor jut érvényre, tartalom futtatása közben a \"Módváltás\" gomb használható. Figyelem: a 6 gombos joypadnak furcsa hatása lehet az azzal nem kompatibilis játékokra."
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_HU "5. joypad alapértelmezett típusa"
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_HU "Az 5. csatlakozó induláskor 2 vagy 6 gombos-e. Ez a beállítás csak a mag elindításakor jut érvényre, tartalom futtatása közben a \"Módváltás\" gomb használható. Figyelem: a 6 gombos joypadnak furcsa hatása lehet az azzal nem kompatibilis játékokra."
-#define PCE_FAST_TURBO_TOGGLING_LABEL_HU "Turbo átkapcsoló"
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_HU "Engedélyezi a turbo átkapcsoló gyorsgombokat (III és IV gomb)."
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_HU "Alternatív Turbo gyorsgomb"
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_HU "A III és IV gomb helyett a RetroPad L3/R3 gombjait rendeli a turbo átkapcsoláshoz. Akkor működik, ha nincs semmi az L3/R3 gombhoz rendelve. Ezzel elkerülhető a III és IV gomb átirányítása a 6-gombos kontroller módba kapcsoláskor."
 #define PCE_FAST_TURBO_DELAY_LABEL_HU "Turbo késleltetés"
 #define PCE_FAST_TURBO_DELAY_INFO_0_HU "A turbo tűz ismétlései közti idő (képkockákban)."
 #define PCE_FAST_CDIMAGECACHE_LABEL_HU "Gyorsítótár a CD képfájlhoz (újraindítás szükséges)"
@@ -18332,34 +17656,6 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_HU,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_HU,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_HU,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_HU,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       PCE_FAST_TURBO_DELAY_LABEL_HU,
       NULL,
@@ -18660,10 +17956,6 @@ struct retro_core_options_v2 options_hu = {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_ID NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_ID NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_ID NULL
-#define PCE_FAST_TURBO_TOGGLING_LABEL_ID NULL
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_ID NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_ID NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_ID NULL
 #define PCE_FAST_TURBO_DELAY_LABEL_ID "Tundaan Bertubi"
 #define PCE_FAST_TURBO_DELAY_INFO_0_ID "Menyesuaikan waktu antara tekan bertubi (berjumlah bingkai)."
 #define PCE_FAST_CDIMAGECACHE_LABEL_ID "Tembolok Citra CD (Perlu Mulai Ulang)"
@@ -19176,34 +18468,6 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_ID,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_ID,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_ID,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_ID,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       PCE_FAST_TURBO_DELAY_LABEL_ID,
       NULL,
@@ -19504,10 +18768,6 @@ struct retro_core_options_v2 options_id = {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_IT "Scegli se la porta 4 joypad dovrebbe essere 2 o 6 pulsanti per impostazione predefinita. Questa opzione viene applicata solo quando il core si avvia, se si desidera passare mentre il contenuto è in esecuzione, utilizzare il pulsante 'Commutatore di modalità'. NOTA: 6 pulsanti joypad possono avere comportamenti strani in giochi non compatibili."
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_IT "Tipo Joypad Predefinito P5"
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_IT "Scegli se la porta 5 joypad dovrebbe essere 2 o 6 pulsanti per impostazione predefinita. Questa opzione viene applicata solo quando il core si avvia, se si desidera passare mentre il contenuto è in esecuzione, utilizzare il pulsante 'Commutatore di modalità'. NOTA: 6 pulsanti joypad possono avere comportamenti strani in giochi non compatibili."
-#define PCE_FAST_TURBO_TOGGLING_LABEL_IT "Attiva/Disattiva Turbo"
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_IT "Abilita i tasti turbo (tasti III e IV)."
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_IT "Scorciatoia Turbo Alternativa"
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_IT "Assegnare i pulsanti RetroPad's L3/R3 come turbo toggle tasti di scelta rapida invece dei pulsanti III e IV. Funziona solo finché non viene assegnato nulla ai pulsanti L3/R3. È possibile evitare di remapping i pulsanti III e IV quando si passa alla modalità controller a 6 pulsanti con questo."
 #define PCE_FAST_TURBO_DELAY_LABEL_IT "Ritardo Turbo"
 #define PCE_FAST_TURBO_DELAY_INFO_0_IT "Regolare il tempo tra gli input del turbo (in fotogrammi)."
 #define PCE_FAST_CDIMAGECACHE_LABEL_IT "Cache Immagine CD (Riavvio Richiesto)"
@@ -20020,34 +19280,6 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_IT,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_IT,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_IT,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_IT,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       PCE_FAST_TURBO_DELAY_LABEL_IT,
       NULL,
@@ -20348,10 +19580,6 @@ struct retro_core_options_v2 options_it = {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_JA "ポート 4 のジョイパッドをデフォルトで 2 または 6 ボタンにするかどうかを選択します。このオプションはコアの開始時にのみ適用されます。コンテンツの実行中に切り替えたい場合は、[モード切り替え] ボタンを使用してください。注意: 6 ボタンジョイパッドは互換性のないゲームで奇妙な動作をすることがあります。"
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_JA "P5 デフォルトジョイパッドの種類"
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_JA "ポート 5 のジョイパッドをデフォルトで 2 または 6 ボタンにするかどうかを選択します。このオプションはコアの開始時にのみ適用されます。コンテンツの実行中に切り替えたい場合は、[モード切り替え] ボタンを使用してください。注意: 6 ボタンジョイパッドは互換性のないゲームで奇妙な動作をすることがあります。"
-#define PCE_FAST_TURBO_TOGGLING_LABEL_JA "ターボ切り替え"
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_JA "ターボ切り替えホットキー (ボタンIII と IV) を有効にします。"
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_JA "代替ターボホットキー"
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_JA "ボタン III と IV ではなく、レトロパッドの L3/R3 ボタンにターボホットキーを割り当てます。 [切り替え] モードかつ、L3/R3 に何も割り当てられていない場合にのみ動作します。これにより、6 ボタンコントローラーモードに切り替えた際、ボタン II および IV へのリマップを回避することができます。"
 #define PCE_FAST_TURBO_DELAY_LABEL_JA "ターボ遅延"
 #define PCE_FAST_TURBO_DELAY_INFO_0_JA "連射間隔の時間を調整します (フレーム単位)。"
 #define PCE_FAST_CDIMAGECACHE_LABEL_JA "CD イメージキャッシュ (再起動が必要)"
@@ -20864,34 +20092,6 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_JA,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_JA,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_JA,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_JA,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       PCE_FAST_TURBO_DELAY_LABEL_JA,
       NULL,
@@ -21192,10 +20392,6 @@ struct retro_core_options_v2 options_ja = {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_KO "포트 4 조이패드를 기본적으로 2개 또는 6개 버튼으로 할지 선택합니다. 이 옵션은 코어가 시작될 때만 적용되며, 콘텐츠가 실행 중일 때 전환하려면 '모드 전환' 버튼을 사용하세요. 참고: 6버튼 조이패드는 호환되지 않는 게임에서 이상한 동작을 일으킬 수 있습니다."
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_KO "P5 기본 조이패드 유형"
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_KO "포트 5 조이패드를 기본적으로 2개 또는 6개 버튼으로 할지 선택합니다. 이 옵션은 코어가 시작될 때만 적용되며, 콘텐츠가 실행 중일 때 전환하려면 '모드 전환' 버튼을 사용하세요. 참고: 6버튼 조이패드는 호환되지 않는 게임에서 이상한 동작을 일으킬 수 있습니다."
-#define PCE_FAST_TURBO_TOGGLING_LABEL_KO "터보 토글"
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_KO "터보 토글 핫키(버튼 III 및 IV) 를 활성화합니다."
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_KO "대체 터보 핫키"
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_KO "레트로 패드의 L3/R3 버튼을 버튼 III 및 IV 대신 터보 핫키로 할당합니다. L3/R3 버튼에 아무 것도 할당되지 않은 경우에만 작동합니다. 이를 통해 6버튼 컨트롤러 모드로 전환할 때 버튼 III 및 IV를 다시 설정해야하는 것을 방지할 수 있습니다."
 #define PCE_FAST_TURBO_DELAY_LABEL_KO "터보 지연"
 #define PCE_FAST_TURBO_DELAY_INFO_0_KO "터보 사이의 시간을 조정합니다 (프레임 단위)."
 #define PCE_FAST_CDIMAGECACHE_LABEL_KO "CD 이미지 캐시 (재시작 필요)"
@@ -21708,34 +20904,6 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_KO,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_KO,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_KO,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_KO,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       PCE_FAST_TURBO_DELAY_LABEL_KO,
       NULL,
@@ -22036,10 +21204,6 @@ struct retro_core_options_v2 options_ko = {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_NL NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_NL NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_NL NULL
-#define PCE_FAST_TURBO_TOGGLING_LABEL_NL NULL
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_NL NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_NL NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_NL NULL
 #define PCE_FAST_TURBO_DELAY_LABEL_NL NULL
 #define PCE_FAST_TURBO_DELAY_INFO_0_NL NULL
 #define PCE_FAST_CDIMAGECACHE_LABEL_NL NULL
@@ -22552,34 +21716,6 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_NL,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_NL,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_NL,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_NL,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       PCE_FAST_TURBO_DELAY_LABEL_NL,
       NULL,
@@ -22880,10 +22016,6 @@ struct retro_core_options_v2 options_nl = {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_NO NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_NO NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_NO NULL
-#define PCE_FAST_TURBO_TOGGLING_LABEL_NO NULL
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_NO NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_NO NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_NO NULL
 #define PCE_FAST_TURBO_DELAY_LABEL_NO NULL
 #define PCE_FAST_TURBO_DELAY_INFO_0_NO NULL
 #define PCE_FAST_CDIMAGECACHE_LABEL_NO NULL
@@ -23396,34 +22528,6 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_NO,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_NO,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_NO,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_NO,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       PCE_FAST_TURBO_DELAY_LABEL_NO,
       NULL,
@@ -23724,10 +22828,6 @@ struct retro_core_options_v2 options_no = {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_OR NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_OR NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_OR NULL
-#define PCE_FAST_TURBO_TOGGLING_LABEL_OR NULL
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_OR NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_OR NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_OR NULL
 #define PCE_FAST_TURBO_DELAY_LABEL_OR NULL
 #define PCE_FAST_TURBO_DELAY_INFO_0_OR NULL
 #define PCE_FAST_CDIMAGECACHE_LABEL_OR NULL
@@ -24240,34 +23340,6 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_OR,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_OR,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_OR,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_OR,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       PCE_FAST_TURBO_DELAY_LABEL_OR,
       NULL,
@@ -24568,10 +23640,6 @@ struct retro_core_options_v2 options_or = {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_PL NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_PL NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_PL NULL
-#define PCE_FAST_TURBO_TOGGLING_LABEL_PL "Przełącz Turbo"
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_PL NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_PL "Alternatywny skrót Turbo"
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_PL NULL
 #define PCE_FAST_TURBO_DELAY_LABEL_PL "Opóźnienie Turbo"
 #define PCE_FAST_TURBO_DELAY_INFO_0_PL NULL
 #define PCE_FAST_CDIMAGECACHE_LABEL_PL NULL
@@ -25084,34 +24152,6 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_PL,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_PL,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_PL,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_PL,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       PCE_FAST_TURBO_DELAY_LABEL_PL,
       NULL,
@@ -25412,10 +24452,6 @@ struct retro_core_options_v2 options_pl = {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_PT_BR "Escolha se o joypad da porta 4 deve ser de 2 ou 6 botões por padrão. Essa opção só é aplicada quando o núcleo é iniciado, se você quiser trocá-la enquanto o conteúdo está sendo executado, use o botão de \"Alternar Modo\".Nota: Joypads de seis botões podem apresentar um comportamento estranho em jogos incompatíveis."
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_PT_BR NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_PT_BR "Escolha se o joypad da porta 5 deve ser de 2 ou 6 botões por padrão. Essa opção só é aplicada quando o núcleo é iniciado, se você quiser trocá-la enquanto o conteúdo está sendo executado, use o botão de \"Alternar Modo\".Nota: Joypads de seis botões podem apresentar um comportamento estranho em jogos incompatíveis."
-#define PCE_FAST_TURBO_TOGGLING_LABEL_PT_BR "Ativar e desativar o turbo"
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_PT_BR "Ativa os atalhos de ligar e desligar o turbo (botões III e IV)."
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_PT_BR "Atalho alternativo do turbo"
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_PT_BR "Atribui os botões L3 e R3 do RetroPad como atalhos de ativação e desativação do turbo, em vez dos botões III e IV. Você pode evitar o remapeamento dos botões III e IV ao alterar para o modo de controle de 6 botões com isso."
 #define PCE_FAST_TURBO_DELAY_LABEL_PT_BR "Atraso do turbo"
 #define PCE_FAST_TURBO_DELAY_INFO_0_PT_BR "Ajusta o intervalo entre as ativações do turbo (em quadros)."
 #define PCE_FAST_CDIMAGECACHE_LABEL_PT_BR "Cache de imagens do CD (requer reinício)"
@@ -25928,34 +24964,6 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_PT_BR,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_PT_BR,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_PT_BR,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_PT_BR,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       PCE_FAST_TURBO_DELAY_LABEL_PT_BR,
       NULL,
@@ -26256,10 +25264,6 @@ struct retro_core_options_v2 options_pt_br = {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_PT_PT NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_PT_PT NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_PT_PT NULL
-#define PCE_FAST_TURBO_TOGGLING_LABEL_PT_PT NULL
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_PT_PT NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_PT_PT NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_PT_PT NULL
 #define PCE_FAST_TURBO_DELAY_LABEL_PT_PT NULL
 #define PCE_FAST_TURBO_DELAY_INFO_0_PT_PT NULL
 #define PCE_FAST_CDIMAGECACHE_LABEL_PT_PT "Cache da Imagem do CD (Reinicialização necessária)"
@@ -26772,34 +25776,6 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_PT_PT,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_PT_PT,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_PT_PT,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_PT_PT,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       PCE_FAST_TURBO_DELAY_LABEL_PT_PT,
       NULL,
@@ -27100,10 +26076,6 @@ struct retro_core_options_v2 options_pt_pt = {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_RU "Выбор 2- или 6-ти кнопочного контроллера по умолчанию для порта 4. Данная опция применяется только при запуске ядра. Для переключения на лету используйте кнопку 'Сменить режим'. ВНИМАНИЕ: в несовместимых играх 6-кнопочный геймпад может вызывать баги управления."
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_RU "Тип джойстика Игрока 5"
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_RU "Выбор 2- или 6-ти кнопочного контроллера по умолчанию для порта 5. Данная опция применяется только при запуске ядра. Для переключения на лету используйте кнопку 'Сменить режим'. ВНИМАНИЕ: в несовместимых играх 6-кнопочный геймпад может вызывать баги управления."
-#define PCE_FAST_TURBO_TOGGLING_LABEL_RU "Переключатель турбо"
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_RU "Активирует горячие клавиши для включения турбо (кнопки III и IV)."
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_RU "Альтернативное включение турбо"
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_RU "Назначает кнопки RetroPad'а L3/R3 в качестве горячих клавиш для включения турбо вместо кнопок III и IV. Работает только при отсутствии привязок к кнопкам L3/R3. Позволяет избежать переназначения кнопок III и IV в режиме 6-кнопочного контроллера."
 #define PCE_FAST_TURBO_DELAY_LABEL_RU "Задержка турбо"
 #define PCE_FAST_TURBO_DELAY_INFO_0_RU "Настраивает промежуток между повторами нажатий (в кадрах)."
 #define PCE_FAST_CDIMAGECACHE_LABEL_RU "Кэшировать образ CD (требуется перезапуск)"
@@ -27616,34 +26588,6 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_RU,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_RU,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_RU,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_RU,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       PCE_FAST_TURBO_DELAY_LABEL_RU,
       NULL,
@@ -27944,10 +26888,6 @@ struct retro_core_options_v2 options_ru = {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_SK NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_SK NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_SK NULL
-#define PCE_FAST_TURBO_TOGGLING_LABEL_SK NULL
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_SK NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_SK NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_SK NULL
 #define PCE_FAST_TURBO_DELAY_LABEL_SK "Trvanie Turbo"
 #define PCE_FAST_TURBO_DELAY_INFO_0_SK NULL
 #define PCE_FAST_CDIMAGECACHE_LABEL_SK NULL
@@ -28460,34 +27400,6 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_SK,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_SK,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_SK,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_SK,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       PCE_FAST_TURBO_DELAY_LABEL_SK,
       NULL,
@@ -28788,10 +27700,6 @@ struct retro_core_options_v2 options_sk = {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_SR NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_SR NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_SR NULL
-#define PCE_FAST_TURBO_TOGGLING_LABEL_SR NULL
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_SR NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_SR NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_SR NULL
 #define PCE_FAST_TURBO_DELAY_LABEL_SR NULL
 #define PCE_FAST_TURBO_DELAY_INFO_0_SR NULL
 #define PCE_FAST_CDIMAGECACHE_LABEL_SR NULL
@@ -29304,34 +28212,6 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_SR,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_SR,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_SR,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_SR,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       PCE_FAST_TURBO_DELAY_LABEL_SR,
       NULL,
@@ -29632,10 +28512,6 @@ struct retro_core_options_v2 options_sr = {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_SV "Välj detta ifall port 4-joypaden ska vara 2-knappars eller 6-knappars som standard. Denna inställning tillämpas endast när kärnan startar. Om du vill byta under tiden innehållet körs, använd 'Lägesväxlings'-knappen. OBS!: 6-knappars joypaden kan visa konstigt beteende i inkompatibla spel."
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_SV "Standard joypad-typ för spelare 5 (P5)"
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_SV "Välj detta ifall port 5-joypaden ska vara 2-knappars eller 6-knappars som standard. Denna inställning tillämpas endast när kärnan startar. Om du vill byta under tiden innehållet körs, använd 'Lägesväxlings'-knappen. OBS!: 6-knappars joypaden kan visa konstigt beteende i inkompatibla spel."
-#define PCE_FAST_TURBO_TOGGLING_LABEL_SV "Växla Turboläge"
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_SV "Aktivera snabbtangenterna för turboväxeln (knappar III och IV)."
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_SV "Alternativ snabbtangent för turbo"
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_SV "Tilldela RetroPads L3/R3-knapparna som snabbtangenter för turbo-läge istället för knappar III och IV. Fungerar endast så länge inget är tilldelat L3/R3-knapparna. Du kan undvika att omkartlägga knappar III och IV när du växlar till 6-knappskontrollläge med detta."
 #define PCE_FAST_TURBO_DELAY_LABEL_SV "Turbofördröjning"
 #define PCE_FAST_TURBO_DELAY_INFO_0_SV "Justera tiden mellan turboeld (i bildrutor)."
 #define PCE_FAST_CDIMAGECACHE_LABEL_SV "Skivavbildningscache (omstart krävs)"
@@ -30148,34 +29024,6 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_SV,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_SV,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_SV,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_SV,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       PCE_FAST_TURBO_DELAY_LABEL_SV,
       NULL,
@@ -30476,10 +29324,6 @@ struct retro_core_options_v2 options_sv = {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_TR "Port 4 joypad varsayılan olarak 2 veya 6 düğme olması gerekip gerekmediğini seçin. Bu seçenek yalnızca çekirdek başladığında uygulanır, içerik çalışırken geçiş yapmak istiyorsanız, 'Mod Değiştir' düğmesini kullanın. NOT: 6 düğmeli joypad, uyumlu olmayan oyunlarda garip davranışlara sahip olabilir."
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_TR "P5 Varsayılan Joypad Tipi"
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_TR "Port 5 joypad varsayılan olarak 2 veya 6 düğme olması gerekip gerekmediğini seçin. Bu seçenek yalnızca çekirdek başladığında uygulanır, içerik çalışırken geçiş yapmak istiyorsanız, 'Mod Değiştir' düğmesini kullanın. NOT: 6 düğmeli joypad, uyumlu olmayan oyunlarda garip davranışlara sahip olabilir."
-#define PCE_FAST_TURBO_TOGGLING_LABEL_TR "Turbo Değiştir"
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_TR "Turbo geçiş tuşlarını etkinleştir (III ve IV tuşları)."
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_TR "Alternatif Turbo Kısayol Tuşu"
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_TR "Retropad L3/R3 tuşlarını, III ve IV tuşlarının yerine turbo geçişi için ata. L3/R3 tuşlarına başka bir şey atanmadığı sürece çalışır. Bununla 6-tuşlu kontrolcü kipine geçerken III ve IV tuşlarını yapılandırmayabilirsiniz."
 #define PCE_FAST_TURBO_DELAY_LABEL_TR "Turbo Gecikmesi"
 #define PCE_FAST_TURBO_DELAY_INFO_0_TR "Turbo sinyallerinin zamanlamasını ayarla. (kare başına)."
 #define PCE_FAST_CDIMAGECACHE_LABEL_TR "CD Kalıbı Önbelleği (Yeniden Başlatılmalı)"
@@ -30992,34 +29836,6 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_TR,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_TR,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_TR,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_TR,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       PCE_FAST_TURBO_DELAY_LABEL_TR,
       NULL,
@@ -31320,10 +30136,6 @@ struct retro_core_options_v2 options_tr = {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_TT NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_TT NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_TT NULL
-#define PCE_FAST_TURBO_TOGGLING_LABEL_TT NULL
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_TT NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_TT NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_TT NULL
 #define PCE_FAST_TURBO_DELAY_LABEL_TT NULL
 #define PCE_FAST_TURBO_DELAY_INFO_0_TT NULL
 #define PCE_FAST_CDIMAGECACHE_LABEL_TT NULL
@@ -31836,34 +30648,6 @@ struct retro_core_option_v2_definition option_defs_tt[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_TT,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_TT,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_TT,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_TT,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       PCE_FAST_TURBO_DELAY_LABEL_TT,
       NULL,
@@ -32164,10 +30948,6 @@ struct retro_core_options_v2 options_tt = {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_UK NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_UK NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_UK NULL
-#define PCE_FAST_TURBO_TOGGLING_LABEL_UK NULL
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_UK NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_UK "Альтернативні турбокнопки"
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_UK NULL
 #define PCE_FAST_TURBO_DELAY_LABEL_UK NULL
 #define PCE_FAST_TURBO_DELAY_INFO_0_UK NULL
 #define PCE_FAST_CDIMAGECACHE_LABEL_UK "Кеш образу CD (потрібен перезапуск)"
@@ -32680,34 +31460,6 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_UK,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_UK,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_UK,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_UK,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       PCE_FAST_TURBO_DELAY_LABEL_UK,
       NULL,
@@ -33008,10 +31760,6 @@ struct retro_core_options_v2 options_uk = {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_VAL NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_VAL NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_VAL NULL
-#define PCE_FAST_TURBO_TOGGLING_LABEL_VAL NULL
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_VAL NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_VAL NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_VAL NULL
 #define PCE_FAST_TURBO_DELAY_LABEL_VAL NULL
 #define PCE_FAST_TURBO_DELAY_INFO_0_VAL NULL
 #define PCE_FAST_CDIMAGECACHE_LABEL_VAL NULL
@@ -33524,34 +32272,6 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "2 Buttons"
    },
    {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_VAL,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_VAL,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_VAL,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_VAL,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
       "pce_fast_turbo_delay",
       PCE_FAST_TURBO_DELAY_LABEL_VAL,
       NULL,
@@ -33852,10 +32572,6 @@ struct retro_core_options_v2 options_val = {
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P4_INFO_0_VN NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_LABEL_VN NULL
 #define PCE_FAST_DEFAULT_JOYPAD_TYPE_P5_INFO_0_VN NULL
-#define PCE_FAST_TURBO_TOGGLING_LABEL_VN NULL
-#define PCE_FAST_TURBO_TOGGLING_INFO_0_VN NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_VN NULL
-#define PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_VN NULL
 #define PCE_FAST_TURBO_DELAY_LABEL_VN NULL
 #define PCE_FAST_TURBO_DELAY_INFO_0_VN NULL
 #define PCE_FAST_CDIMAGECACHE_LABEL_VN NULL
@@ -34366,34 +33082,6 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
          { NULL, NULL},
       },
       "2 Buttons"
-   },
-   {
-      "pce_fast_turbo_toggling",
-      PCE_FAST_TURBO_TOGGLING_LABEL_VN,
-      NULL,
-      PCE_FAST_TURBO_TOGGLING_INFO_0_VN,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
-   },
-   {
-      "pce_fast_turbo_toggle_hotkey",
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_LABEL_VN,
-      NULL,
-      PCE_FAST_TURBO_TOGGLE_HOTKEY_INFO_0_VN,
-      NULL,
-      "input",
-      {
-         { "disabled", NULL },
-         { "enabled", NULL },
-         { NULL, NULL },
-      },
-      "disabled"
    },
    {
       "pce_fast_turbo_delay",
